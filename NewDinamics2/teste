@@ -1,0 +1,11 @@
+from unittest import TestCase
+from Database.UsuarioDAO import UsuarioDAO
+ 
+class TestUsuarioDAO(TestCase):
+ 
+    # Define Métodos de Testes
+ 
+    def test_inserir(self):
+        p1 = UsuarioDAO()
+        p1.inserir("Nome", "email", "senha", "data_nasc", "profissao", "genero", "cidade", "estado", "pais")
+        self.assertEqual("Nome", "email", "senha", "data_nasc", "profissao", "genero", "cidade", "estado", "pais", p1.UsuarioDAO())
