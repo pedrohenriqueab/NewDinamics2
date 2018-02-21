@@ -1,0 +1,12 @@
+import sqlite3
+conn = sqlite3.connect('dinamics.db')
+cursor = conn.cursor()
+
+class Usuario():
+    def __init__(self, nome, email, senha, profissao, sexo, data_nasc):
+        self.nome = nome
+        self.email = email
+        self.senha = senha
+        self.profissao = profissao
+        self.sexo = sexo
+        self.data_nasc = data_nasc
