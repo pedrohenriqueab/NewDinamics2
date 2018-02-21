@@ -1,0 +1,55 @@
+from Model.Usuario import Usuario
+from Model.Comentario import Comentario
+from Database.UsuarioDAO import UsuarioDAO
+from Database.ComentarioDAO import ComentarioDAO
+'''
+Função para exibir o Menu
+'''
+
+def exibirMenu():
+    print("   === MENU === \n"
+        " === DINAMICS ===\n"
+        " 1 - Criar usuario\n"
+        " 2 - Alterar usuario\n"
+        " 3 - Deletar usuario\n"
+        " 4 - Listar usuario\n"
+        " 5 - Inserir comentário\n"
+        " 0 - Sair")        
+
+def main(args = []):
+
+    # Exibição do Menu de Opções.
+    exibirMenu()
+
+    continuar = True
+
+    while continuar:
+        try:
+            # Continuar a execução do programa.
+            opcao = int(input("Digite a opção: "))
+
+            if (opcao == 1):
+                criarUsuario()
+
+            elif (opcao == 2):
+                alterarUsuario()
+
+            elif (opcao == 3):
+                deletarUsuario()
+
+            elif (opcao == 4):
+                listarUsuario()
+
+            elif (opcao == 5):
+                inserirComentario()
+
+            elif (opcao == 0):
+                continuar = False
+            else:
+                print("Ops! Opção inválida!")
+
+        except ValueError:
+            print("Ops! Digite um valor válido")
+
+if (__name__ == "__main__"):
+    main()
